@@ -17,7 +17,7 @@ const links = [
   { name: "Logout", link: "/logout", icon: FiLogOut },
 ];
 
-const MobileSidebar = ({ showMobileSidebar }) => {
+const MobileSidebar = ({ showMobileSidebar, toggleSidebar }) => {
   return (
     <div
       className={`min-h-screen fixed block md:hidden ${
@@ -29,6 +29,7 @@ const MobileSidebar = ({ showMobileSidebar }) => {
           <NavLink
             to={`${link.link}`}
             key={index}
+            onClick={() => toggleSidebar()}
             className={`flex group items-center gap-3.5 p-3 pl-5 ${
               link?.gap && "mt-12"
             }  hover:bg-white hover:text-gray-900 hover:rounded-md text-white transition-all duration-150 ease-in-out`}

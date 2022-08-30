@@ -14,7 +14,7 @@ const AllBlogs = ({ blogs }) => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 500);
   }, [setLoading]);
 
   const getImages = (index) => {
@@ -52,7 +52,7 @@ const AllBlogs = ({ blogs }) => {
         </div>
         <div className="flex flex-col items-start justify-start gap-5 px-3 mt-2">
           <h1 className="">All Blogs</h1>
-          <div className="grid w-full grid-cols-1 items-center lg:grid-cols-2 gap-10 mt-4 ">
+          <div className="grid items-center w-full grid-cols-1 gap-10 mt-4 lg:grid-cols-2 ">
             {blogs.map((blog, index) => (
               <div>
                 {loading ? (
@@ -70,7 +70,7 @@ const AllBlogs = ({ blogs }) => {
                         <p className="text-[12px] sm:text-[16px] mb-10 sm:mb-0 tracking-wider text-gray-700 font-[300]">
                           {getParaGraphs(index).slice(0, 200)}{" "}
                           <Link
-                            className="text-indigo-600 text-sm"
+                            className="text-sm text-indigo-600"
                             to={`/blog/${blog.id}`}
                           >
                             Read more

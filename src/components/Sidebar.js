@@ -17,12 +17,12 @@ const links = [
   { name: "Logout", link: "/logout", icon: FiLogOut },
 ];
 
-const Sidebar = ({ showSidebar }) => {
-  const [open, setOpen] = useState(false);
+const Sidebar = () => {
+  const [open, setOpen] = useState(true);
 
   return (
     <div
-      className={`min-h-screen relative hidden md:block  bg-gray-900 px-4   transition-all duration-500 ease-in-out text-white ${
+      className={`min-h-screen fixed left-0 z-[900] top-0 hidden md:block  bg-gray-900 px-4   transition-all duration-500 ease-in-out text-white ${
         open ? "w-[95px]" : "w-[230px]"
       }`}
     >
@@ -57,7 +57,7 @@ const Sidebar = ({ showSidebar }) => {
           </NavLink>
         ))}
       </div>
-      <div className={`mt-36 flex items-center justify-center`}>
+      <div className={`mt-20 flex items-center justify-center`}>
         <img
           src="https://images.pexels.com/photos/13174596/pexels-photo-13174596.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
           alt="profile"

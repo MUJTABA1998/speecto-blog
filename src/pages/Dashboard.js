@@ -11,16 +11,21 @@ const Dashboard = () => {
     setSidebar(!showMobileSidebar);
   };
   return (
-    <div className="flex ">
+    <div className="relative flex">
       <Sidebar />
-      <MobileSidebar showMobileSidebar={showMobileSidebar} />
+      <MobileSidebar
+        showMobileSidebar={showMobileSidebar}
+        toggleSidebar={toggleSidebar}
+      />
       <button
         className="absolute top-6 right-5 text-[25px] md:hidden"
         onClick={() => toggleSidebar()}
       >
         <FiMenu />
       </button>
-      <Outlet />
+      <div className="max-w-[84%] mx-auto overflow-x-hidden overflow-y-auto">
+        <Outlet />
+      </div>
     </div>
   );
 };

@@ -2,11 +2,11 @@ import React from "react";
 
 const Image = ({ content }) => {
   return (
-    <div className="max-w-7xl -mt-24 sm:mt-5 h-[500px]  flex items-center justify-center">
+    <div className=" w-[300px] sm:w-[500px] md:w-full h-[150px] md:h-[300px]  rounded-[7px]  self-start">
       <img
         src={content.data.url}
         alt={content.data.id}
-        className="object-contain w-full h-full rounded-[4px]"
+        className="object-contain h-full w-full  rounded-[4px]"
       />
     </div>
   );

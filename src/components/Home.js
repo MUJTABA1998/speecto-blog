@@ -13,7 +13,7 @@ const Home = ({ blogs }) => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 500);
   }, [setLoading]);
 
   const getImages = (index) => {
@@ -51,7 +51,7 @@ const Home = ({ blogs }) => {
         </div>
         <div className="flex flex-col items-start justify-start gap-5 px-3 mt-2">
           <h1 className="text-[20px] sm:text-[33px]">Popular Blogs</h1>
-          <div className="grid w-full grid-cols-1 lg:grid-cols-2 gap-10 mt-4 ">
+          <div className="grid w-full grid-cols-1 gap-10 mt-4 lg:grid-cols-2 ">
             {blogs.slice(0, 5).map((blog, index) => (
               <div>
                 {loading ? (
@@ -59,7 +59,7 @@ const Home = ({ blogs }) => {
                 ) : (
                   <div
                     key={index}
-                    className="grid w-full max-w-[700px] h-auto sm:h-[200px]  relative  grid-cols-2 gap-x-7"
+                    className="grid w-full max-w-7xl h-auto sm:h-[200px]  relative  grid-cols-2 gap-x-2 sm:gap-x-7"
                   >
                     <Link className="w-[120%] " to={`/blog/${blog.id}`}>
                       <h2 className="text-[15px] sm:text-[20px]">
@@ -69,7 +69,7 @@ const Home = ({ blogs }) => {
                         <p className="text-[12px] sm:text-[16px] mb-10 sm:mb-0 tracking-wider text-gray-700 font-[300]">
                           {getParaGraphs(index).slice(0, 200)}{" "}
                           <Link
-                            className="text-indigo-600 text-sm"
+                            className="text-sm text-indigo-600"
                             to={`/blog/${blog.id}`}
                           >
                             Read more
@@ -89,7 +89,7 @@ const Home = ({ blogs }) => {
                         src={getImages(index)}
                         alt={index}
                         key={index}
-                        className="max-w-[140px] h-[80px] sm:max-w-[200px] sm:h-[130px] object-cover rounded-md w-full"
+                        className="max-w-[100px] h-[80px] sm:max-w-[200px] sm:h-[130px] object-cover rounded-md w-full"
                       />
                     </div>
                   </div>
